@@ -182,7 +182,7 @@ The dashboard was designed to provide an executive-level overview of SaaS perfor
 
 ### Churn Analysis
 
-<img width="1062" height="592" alt="CA" src="" />
+<img width="1062" height="592" alt="CA" src="https://github.com/DataDonRowam23/SaaS-Revenue-Churn-Analysis/blob/main/Churn%20Analysis.jpg" />
 
 
 ---
