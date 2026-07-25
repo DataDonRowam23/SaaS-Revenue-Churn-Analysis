@@ -1,4 +1,12 @@
 
+
+<img width="1057" height="592" alt="1 ov" src="https://github.com/DataDonRowam23/SaaS-Revenue-Churn-Analysis/blob/main/Customer%20Churn%20img.jpg" />
+
+
+
+
+
+
 ## 📌 Business Problem
 
 For SaaS companies, sustainable growth depends on acquiring customers, increasing recurring revenue and minimizing customer churn. 
