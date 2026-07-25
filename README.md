@@ -1,154 +1,235 @@
-# SaaS-Revenue-Churn-Analysis
-This project aims to analyse customer behaviour, revenue trends and churn drivers for a B2B SaaS company, Cloud Task Pro. The goal is to provide actionable insights to support leadership decisions and improve customer retention.
 
-# 📊SaaS Revenue & Churn Analysis Project
+## 📌 Business Problem
 
-## 🚀 Overview
+For SaaS companies, sustainable growth depends on acquiring customers, increasing recurring revenue and minimizing customer churn. 
 
-This project analyzes customer behavior, revenue trends, and churn drivers for a B2B SaaS company (**CloudTask Pro**). The goal is to provide actionable insights to support leadership decisions and improve customer retention.
+High churn rates can significantly impact profitability and long-term business performance.
 
-An interactive Excel dashboard was built using advanced analytics techniques to visualize key business metrics such as churn rate, MRR, customer engagement, and risk segmentation.
+This project analyzes customer subscription and revenue data to identify key drivers of churn, evaluate customer retention, measure revenue growth, and uncover opportunities to improve customer lifetime value and overall business performance.
 
+---
 
+## 📂 Dataset Overview
 
-## 🎯 Objectives
+This project uses two datasets:
 
-- Analyze overall and segment-wise churn rates  
-- Identify high-risk customer segments  
-- Evaluate revenue growth trends over time  
-- Compare Customer Lifetime Value (CLV) with Customer Acquisition Cost (CAC)  
-- Understand how feature usage and NPS impact churn  
+### Subscription Dataset
 
+Customer-level subscription information including:
 
-## 🧰 Tech Stack
-- **Excel (Advanced)**
-  - Power Pivot  
-  - DAX Measures  
-  - Pivot Tables  
-  - Data Validation  
-- Data Visualization & Dashboard Design  
+- Customer ID
+- Subscription Plan
+- Billing Cycle
+- Industry
+- Company Size
+- Number of Seats
+- Monthly Revenue
+- Acquisition Channel
+- Region
+- Churn Status
+- Churn Reason
+- Support Tickets
+- NPS Score
+- Feature Usage Percentage
+- Upgrade Status
 
+### Monthly Revenue Dataset
 
-## 📂 Dataset
+Monthly SaaS performance metrics including:
 
-The project uses two datasets:
+- Active Customers
+- New Customers
+- Churned Customers
+- Monthly Churn Rate
+- Total MRR
+- Average Revenue Per Customer (ARPU)
+- Customer Acquisition Cost (CAC)
 
-1. **Subscription Data (600 customers)**
-   - Customer ID  
-   - Plan Type (Starter, Professional, Business, Enterprise)  
-   - Billing Cycle (Monthly / Annual)  
-   - Churn Status  
-   - Feature Usage %  
-   - NPS Score  
-   - Industry & Company Size  
+---
 
-2. **Monthly Revenue Data (2022–2025)**
-   - Monthly MRR  
-   - Average Revenue per Customer  
+## 🧹 Data Cleaning & Preparation
 
+Data cleaning and preprocessing were performed using Python (Pandas).
 
-## 📊 Dashboard Features
+### Key Steps
 
-- 📌 Customer Engagement Funnel  
-- 📊 Active vs Churned Customers by Plan  
-- 🎯 Feature Usage Gap (Active vs Churned by Industry)  
-- 📈 Revenue Trend (Dynamic by Month Selection)  
-- 🌍 Revenue Distribution by Region and Plan  
-- 🍩 Acquisition Channel Distribution  
-- 📉 Customer Sentiment by Company Size  
-- 📊 Dynamic KPI Comparison (Billing, Risk, Usage, Upgrade)  
+- Imported and validated both datasets
+- Checked for missing values and data inconsistencies
+- Converted date columns into proper datetime format
+- Verified revenue and customer metrics
+- Handled null values in churn-related fields
+- Performed exploratory data analysis (EDA)
+- Created derived metrics for churn and revenue analysis
 
+### Tools Used
 
-## 🔑 Key Insights
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
 
+---
 
-## 🔴 High Churn Rate
-- Overall churn rate is ~52%, indicating significant retention challenges
-- Churn remains a critical risk despite growing customer base
+## 🗄️ SQL Analysis
 
+-- Data Cleaning in SQL
 
-## 📉 Churn Concentration
-- Churn is highest among:
-  -> Lower-tier plans (Starter / Professional)
-  -> Smaller company segments
-- Suggests weaker product fit or lower engagement in these segments
+##Key Steps Used
 
-
-## 💳 Billing Cycle Impact
-- Annual subscriptions demonstrate stronger retention
-- Monthly customers show higher churn, indicating short-term commitment risk
-
-
-## 📊 Usage Drives Retention
-- Customers with low feature usage (<30%) are significantly more likely to churn
-- High engagement strongly correlates with customer retention
+-- Fixed company size and region in subscriptons dataset
+-- There were no duplicates in both subscriptions and monthly revenue dataset
 
 
-## 😊 Customer Sentiment Matters
-- Detractors (low NPS) exhibit the highest churn rates
-- Promoters are far more likely to remain active
+Business questions answered using the SQL:
+
+### Customer & Churn Analysis
+
+- What is the overall customer churn rate?
+- How has churn trended over time?
+- Which subscription plans have the highest churn?
+- Does billing cycle impact retention?
+- What are the top churn reasons?
+- How does churn vary by company size and industry?
+
+### Revenue Analysis
+
+- Which plans generate the most revenue?
+- Which industries contribute the highest revenue?
+- Which regions generate the most revenue?
+- Which acquisition channels bring the highest-value customers?
+
+### SaaS Metrics
+
+- Average Revenue Per User (ARPU)
+- Customer Acquisition Cost (CAC)
+- Customer Lifetime Value (CLV)
+- CLV:CAC Ratio by Plan
+
+---
+
+## 📈 Key Insights
+
+### Customer Retention
+
+- Overall churn rate was **52.17%**.
+- The **Starter Plan** experienced the highest churn rate (**70.51%**).
+- Enterprise customers demonstrated the strongest retention.
+- Monthly subscribers churned significantly more than annual subscribers.
+
+### Revenue Performance
+
+- Business and Enterprise plans generated the majority of total revenue.
+- North America contributed the highest share of revenue.
+- Organic Search was the most effective acquisition channel.
+
+### Customer Behavior
+
+- Budget cuts and pricing concerns were the leading reasons for customer churn.
+- Customers with lower product engagement were more likely to churn.
+- Higher NPS scores were associated with stronger customer retention.
+
+### Profitability
+
+- Enterprise customers generated the highest estimated Customer Lifetime Value (CLV).
+- Starter customers produced the lowest CLV:CAC ratio.
+- Enterprise and Business plans were the most profitable customer segments.
+
+---
+
+## 📊 Power BI Dashboard
+
+The dashboard was designed to provide an executive-level overview of SaaS performance through three interactive pages.
+
+### Executive Overview
+
+- Total Customers
+- Total MRR
+- Churn Rate
+- ARPU
+- CAC
+- Active Customer Trend
+- MRR Trend
+- New vs Churned Customers
+
+### Revenue Analysis
+
+- Revenue by Plan
+- Revenue by Industry
+- Revenue by Region
+- Revenue by Acquisition Channel
+
+### Churn Analysis
+
+- Churn Rate by Plan
+- Churn Rate by Billing Cycle
+- Churn Rate by Company Size
+- Top Churn Reasons
+
+---
+
+## 📸 Dashboard Screenshots
+
+### Executive Overview
+
+<img width="1057" height="592" alt="1 ov" src="" />
 
 
-## 📈 Revenue Growth vs Risk
-- MRR shows consistent upward growth
-- However, high churn undermines long-term revenue stability and expansion potential
+### Revenue Analysis
+
+<img width="1062" height="592" alt="RA" src="" />
 
 
+### Churn Analysis
 
-## ⚠️ At-Risk Customer Definition
-Customers are classified as At-Risk if:
-- Feature usage < 30%
-- OR NPS score ≤ 6
-Approximately 47.83% of active customers fall into this category, indicating a significant opportunity for proactive retention strategies
+<img width="1062" height="592" alt="CA" src="" />
 
 
-## 💡 Business Recommendations
+---
 
-### 🔧 Improve Onboarding & Feature Adoption
-- Implement guided onboarding flows  
-- Encourage early feature usage (activation events)  
-- Track low-usage users and trigger engagement actions  
+## 💡 Recommendations
 
+### Improve Customer Retention
 
+- Encourage customers to switch to annual subscriptions.
+- Improve onboarding and engagement for Starter Plan customers.
+- Increase feature adoption through targeted customer success initiatives.
 
-### 💳 Promote Annual Plans
-- Offer incentives for annual subscriptions  
-- Reduce churn by improving long-term commitment
+### Reduce Churn
 
+- Address pricing concerns through flexible pricing options.
+- Improve customer support experience.
+- Prioritize development of frequently requested features.
 
-### 🎯 Target High-Risk Segments
-- Focus on:
-  - Low usage customers  
-  - Low NPS segments  
-- Use proactive retention strategies
+### Increase Revenue
 
+- Focus marketing efforts on high-performing acquisition channels.
+- Promote plan upgrades among existing customers.
+- Prioritize acquisition of Enterprise and Business customers due to their higher lifetime value.
 
-### 📊 Segment-Based Strategy
-- Customize experience by:
-  - Company size  
-  - Industry  
-  - Plan type
- 
+---
 
+## 🛠️ Tech Stack
 
-## 📸 Dashboard Preview
+- Python
+- Pandas
+- NumPy
+- PostgreSQL
+- MySQL
+- Power BI
+- DAX
+- GitHub
 
-<img width="1897" height="822" alt="image" src="" />
+---
 
+## 👨‍💻 Author
 
+**Don Rowam**
 
-## 📁 Project Structure
+ Data Analyst transforming data into actionable business insights using SQL,Excel, Tableau, Power BI & Python.
 
-📦 SaaS-Revenue-Churn-Analysis
-┣ 📄 README.md
-┣ 📂 SQL
-┃ ┗ churn_analysis.sql
-┣ 📂 Data
-┃ ┣ subscription_data.csv
-┃ ┗ monthly_revenue.csv
-┣ 📸 dashboard.png
+🔗 LinkedIn: (https://www.linkedin.com/in/roniance-wanyonyi-61741336a/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BIc%2BVDxykQTacIYF9gjwTsA%3D%3D)
 
+---
 
-## 📌 Conclusion
-
-While the company shows strong revenue growth, high churn remains a major concern. Improving customer onboarding, increasing feature adoption, and targeting high-risk segments can significantly enhance retention and long-term growth.
+⭐ If you found this project interesting, feel free to explore the repository and connect with me on LinkedIn.
